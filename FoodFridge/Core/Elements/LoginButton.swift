@@ -12,13 +12,18 @@ struct LoginButton: View {
     var width: CGFloat = 200
     var height: CGFloat = 25
     var action: () -> Void
+    var image: String = ""
     
     var body: some View {
         
         Button(action:
            action
         , label: {
-            VStack{
+            HStack{
+                Image(image)
+                    .resizable()
+                    .frame(width: 20 , height: 20)
+                
                 Text(title)
                     .lineLimit(1)
                     .frame(width: width , height: height)
