@@ -13,7 +13,7 @@ struct FoodFridgeApp: App {
     var body: some Scene {
         
         WindowGroup {
-            LoginView()
+            AuthenthicationView()
         }
     }
 }

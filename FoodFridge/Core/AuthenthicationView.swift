@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-struct LoginView: View {
+struct AuthenthicationView: View {
     @State private var signUpWithEmailShow: Bool = false
     @State private var signUpWithGoogleShow: Bool = false
     @State private var signUpWithAppleShow: Bool = false
     @State private var landingPageShow: Bool = false
+    @State private var logInPageShow: Bool = false
     
     var body: some View {
         VStack {
@@ -45,10 +46,14 @@ struct LoginView: View {
             Text("or")
                 .padding([.top,.bottom], 30)
             
-            LoginButton(title:"Enter as a guest") {
-                self.landingPageShow = true
+            LoginButton(title:"Log in") {
+                self.logInPageShow = true
             }
+            .sheet(isPresented: $logInPageShow, content: {
+                LogInView()
+            })
              
+            
                
             Spacer()
             
@@ -60,5 +65,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    AuthenthicationView()
 }
