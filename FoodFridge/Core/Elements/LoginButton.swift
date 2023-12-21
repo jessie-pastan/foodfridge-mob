@@ -8,11 +8,32 @@
 import SwiftUI
 
 struct LoginButton: View {
+    var title: String = ""
+    var width: CGFloat = 200
+    var height: CGFloat = 25
+    var action: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        Button(action:
+           action
+        , label: {
+            VStack{
+                Text(title)
+                    .lineLimit(1)
+                    .frame(width: width , height: height)
+                    .foregroundColor(Color.button1)
+                    .padding(7)
+                    .background(Color.button2)
+                    .cornerRadius(120)
+            }
+        }
+        )
+       
     }
 }
 
 #Preview {
-    LoginButton()
+    LoginButton(action: {})
+               .previewLayout(.sizeThatFits)
 }
