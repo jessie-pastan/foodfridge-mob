@@ -16,6 +16,8 @@
 		757542DB2B3401EE00048178 /* SignUpWithEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542DA2B3401EE00048178 /* SignUpWithEmailView.swift */; };
 		757542DD2B34B08D00048178 /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542DC2B34B08D00048178 /* LandingPageView.swift */; };
 		757542DF2B34F3D300048178 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542DE2B34F3D300048178 /* LogInView.swift */; };
+		757542E22B351BC200048178 /* CourierPrime-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757542E12B351BC200048178 /* CourierPrime-Regular.ttf */; };
+		757542E42B351BD000048178 /* CourierPrime-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757542E32B351BD000048178 /* CourierPrime-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,9 @@
 		757542DA2B3401EE00048178 /* SignUpWithEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailView.swift; sourceTree = "<group>"; };
 		757542DC2B34B08D00048178 /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
 		757542DE2B34F3D300048178 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		757542E02B351AAF00048178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		757542E12B351BC200048178 /* CourierPrime-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CourierPrime-Regular.ttf"; sourceTree = "<group>"; };
+		757542E32B351BD000048178 /* CourierPrime-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CourierPrime-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 		757542C12B33E8F000048178 /* FoodFridge */ = {
 			isa = PBXGroup;
 			children = (
+				757542E02B351AAF00048178 /* Info.plist */,
 				757542C22B33E8F000048178 /* FoodFridgeApp.swift */,
 				757542D42B33EFCE00048178 /* Core */,
 				757542D12B33EAE900048178 /* Helper */,
@@ -84,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				757542D22B33EB0E00048178 /* ColorExtention.swift */,
+				757542E52B351BD800048178 /* Fonts */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -106,6 +113,15 @@
 				757542D62B33F31B00048178 /* LoginButton.swift */,
 			);
 			path = Elements;
+			sourceTree = "<group>";
+		};
+		757542E52B351BD800048178 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				757542E32B351BD000048178 /* CourierPrime-Bold.ttf */,
+				757542E12B351BC200048178 /* CourierPrime-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +183,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				757542CB2B33E8F100048178 /* Preview Assets.xcassets in Resources */,
+				757542E42B351BD000048178 /* CourierPrime-Bold.ttf in Resources */,
+				757542E22B351BC200048178 /* CourierPrime-Regular.ttf in Resources */,
 				757542C72B33E8F100048178 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +336,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FoodFridge/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -356,6 +376,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FoodFridge/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
