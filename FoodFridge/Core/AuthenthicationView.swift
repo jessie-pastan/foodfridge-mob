@@ -16,69 +16,88 @@ struct AuthenthicationView: View {
     
     var body: some View {
         NavigationStack {
+            
             VStack {
-                Image("cooking")
-                    .resizable()
-                    .frame(width: 150, height: 150)
-                    .scaledToFit()
-                VStack {
-                    Text(" For a personalized experience, please sign up for your account.").font(.callout)
+                HStack {
+                    //MARK: Skip link to landing page
+                    Spacer()
+                    
+                    Image("cooking")
+                        .resizable()
+                        .frame(width: 270, height: 270)
+                        .scaledToFit()
+                        .offset(x: 20, y: 20)
+                    Spacer()
+                    NavigationLink {
+                        LandingPageView()
+                    } label: {
+                        HStack {
+                            Text("Skip")
+                            
+                        }
+                        
+                        .offset(y: -120)
+                        .foregroundStyle(Color(.button4))
+                    }
                 }
-                .padding([.top,.bottom], 20)
+                VStack {
+                    Text("Ready to explore new menu ?")
+                        .fixedSize(horizontal: false, vertical: true)
+                        .lineLimit(2)
+                        .multilineTextAlignment(.center)
+                    
+                }
+                .font(Font.custom("CourierPrime-Regular", size: 26))
+                .padding(.top, 10)
                 .frame(width: 250)
                 
                 //MARK: Buttons for sign in
-                //Email
-                LoginButton(title:"Sign up with Email") {
-                    self.signUpWithEmailShow = true
-                }
-                .sheet(isPresented: $signUpWithEmailShow, content: {
-                    SignUpWithEmailView()
-                })
-                //Google
-                LoginButton(title:"Sign up with Google") {
-                    self.signUpWithGoogleShow = true
-                }
-                //Apple
-                LoginButton(title:"Sign up with Apple") {
-                    self.signUpWithAppleShow = true
-                }
-                
-                Text("Already signed up?")
-                    .padding([.top,.bottom], 30)
-                
-                LoginButton(title:"Log in") {
-                    self.logInPageShow = true
-                }
-                .sheet(isPresented: $logInPageShow, content: {
-                    LogInView()
-                })
-               
-                Spacer()
-                //MARK: Skip link to landing page
-                NavigationLink {
-                    LandingPageView()
-                } label: {
-                    HStack {
-                        Text("Skip")
-                        Image(systemName: "arrowtriangle.forward.fill")
+                //create account with email
+                VStack {
+                    LoginButton(title:"Create account") {
+                        self.signUpWithEmailShow = true
                     }
-                    .foregroundStyle(Color(.button4))
+                    .sheet(isPresented: $signUpWithEmailShow, content: {
+                        SignUpWithEmailView()
+                    })
+                    
+                    LoginButton(title:"Sign in with Email") {
+                        self.logInPageShow = true
+                    }
+                    .sheet(isPresented: $logInPageShow, content: {
+                        LogInView()
+                    })
                 }
-                .padding(.leading, 270)
+                .padding(.leading,-30)
+                .font(Font.custom("CourierPrime-Bold", size: 25))
                 
-
+                Text("or")
+                    .padding([.top,.bottom], 30)
+                    .font(Font.custom("CourierPrime-Regular", size: 17))
                 
-               
+                
+                HStack {
+                    Image("googleIcon")
+                        .resizable()
+                        .frame(width: 55, height: 55)
+                    Image("appleIcon")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .offset(y: -5)
+                    
+                }
+                
+                Spacer()
                 
             }
             .padding()
         }
-        
     }
     
-
 }
+
+
+
 
 #Preview {
     AuthenthicationView()
