@@ -19,26 +19,24 @@ struct AuthenthicationView: View {
             
             VStack {
                 HStack {
-                    //MARK: Skip link to landing page
+                   
                     Spacer()
-                    
+                    //MARK: Image
                     Image("cooking")
                         .resizable()
                         .frame(width: 270, height: 270)
                         .scaledToFit()
                         .offset(x: 20, y: 20)
                     Spacer()
+                    
+                    //MARK: Skip link to landing page
                     NavigationLink {
                         LandingPageView()
                     } label: {
-                        HStack {
-                            Text("Skip")
-                            
-                        }
-                        
-                        .offset(y: -120)
-                        .foregroundStyle(Color(.button4))
+                        Text("Skip")
                     }
+                    .offset(y: -130)
+                    .foregroundStyle(Color(.button4))
                 }
                 VStack {
                     Text("Ready to explore new menu ?")
@@ -51,7 +49,7 @@ struct AuthenthicationView: View {
                 .padding(.top, 10)
                 .frame(width: 250)
                 
-                //MARK: Buttons for sign in
+                //MARK: Buttons for create account and sign in
                 //create account with email
                 VStack {
                     LoginButton(title:"Create account") {
