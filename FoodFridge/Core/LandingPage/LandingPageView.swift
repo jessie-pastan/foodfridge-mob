@@ -9,14 +9,12 @@ import SwiftUI
 
 struct LandingPageView: View {
     
-    @State var selectedCuisine: String = "Cuisine"
-    @State private var isPickerExpanded = false
-    @State private var isPickerVisible = false
+   
     @State var showSheet = false
     
-    let cuisine = ["Thai", "French", "Italian","Japnese", "Chinese"]
+   
     let itemCategories = ["Carbs", "Dairy", "Seasoning","Protein", "Veggies","Cuisine"]
-    let fourRows = [GridItem(),GridItem(),GridItem()]
+    let threeRows = [GridItem(),GridItem(),GridItem()]
     
     var body: some View {
         NavigationStack {
@@ -60,12 +58,12 @@ struct LandingPageView: View {
                         .frame(width: proxy.size.width / 2 , height: proxy.size.width / 2)
                     Spacer()
                     //MARK: Select ingredients buttons
-                    LazyHGrid (rows: fourRows) {
+                    LazyHGrid (rows: threeRows) {
                         ForEach(0..<itemCategories.count, id: \.self) { item in
                             VStack {
                                 SelectIngredientsButton(title: "\(itemCategories[item])", action: {
                                     showSheet = true
-                                }, sheetHeight: proxy.size.height,width: proxy.size.width / 2.5, height: proxy.size.height / 15 , showSheet: $showSheet)
+                                }, sheetHeight: proxy.size.height,width: proxy.size.width / 2.5, height: proxy.size.height / 15, showSheet: $showSheet)
                             }
                         }
                     }
@@ -81,7 +79,7 @@ struct LandingPageView: View {
                             //TODO: navigate to profile view
                         }label: {
                             Image(systemName: "person.crop.circle")
-                                .foregroundColor(.black)
+                                .foregroundColor(Color(.button2))
                         }
                     }
                 }
