@@ -23,43 +23,41 @@ struct LandingPageView: View {
             GeometryReader { proxy in
                 VStack {
                     //MARK: Head line
-                    VStack {
+                    VStack(alignment: .leading) {
                         Text("Let’s cook something from your fridge!")
                             .fixedSize(horizontal: false, vertical: true)
                             .font(Font.custom("CourierPrime-Bold", size: proxy.size.height / 25 ))
-                           
+                        Text("Select items from categories below")
+                            .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 15))
                     }
-            
+                    
                     //MARK: Prompt
                     ZStack {
                         let prompt = Rectangle()
                         prompt.frame( height: proxy.size.height / 3.5).cornerRadius(10)
                         //MARK: Display Selected ingredients
                         
+                           
+                        
                         //MARK: Genenerate Recipes Button
                         VStack {
                             Button {
-                                //call chat GPT api to get recipes
+                                //TODO: call chat GPT api to get recipes and navigate user to recipes screen
+                                
                             } label: {
                                 SmallButton(title: "Generate Recipe")
                             }
-                            
                         }
                         .frame(width: 200, height: 30)
                         .offset(y: 70)
                         .padding()
-                        
-                        
-                        
                     }
                     .padding(.top, -10)
-                   
+                    
                     //MARK: Picture
                     Image("chef")
                         .resizable()
                         .frame(width: proxy.size.width / 2 , height: proxy.size.width / 2)
-                        
-                    
                     Spacer()
                     //MARK: Select ingredients buttons
                     LazyHGrid (rows: fourRows) {
@@ -69,19 +67,14 @@ struct LandingPageView: View {
                                     showSheet = true
                                 }, sheetHeight: proxy.size.height,width: proxy.size.width / 2.5, height: proxy.size.height / 15 , showSheet: $showSheet)
                             }
-                            
-                            
                         }
                     }
                     .padding(.bottom, -5)
+                    
                     Spacer()
-                   
                     
-                    
-                  
                 }
                 .padding(4)
-                //.padding(.horizontal)
                 .toolbar {
                     ToolbarItem {
                         NavigationLink {
@@ -90,14 +83,9 @@ struct LandingPageView: View {
                             Image(systemName: "person.crop.circle")
                                 .foregroundColor(.black)
                         }
-                        
-                        
                     }
-                    
                 }
-                
             }
-            
         }
     }
 }

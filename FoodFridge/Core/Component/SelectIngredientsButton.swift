@@ -9,12 +9,13 @@ import SwiftUI
 
 struct SelectIngredientsButton: View {
     
+    var icon: String = "dairy"
     var title: String = "this is title"
     var action: () -> Void
     var sheetHeight: CGFloat = 0
     var width: CGFloat = 180
     var height: CGFloat = 40
-    var icon: String = "dairy"
+    
     
     @Binding var showSheet: Bool
     
