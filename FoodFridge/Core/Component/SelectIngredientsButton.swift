@@ -41,7 +41,7 @@ struct SelectIngredientsButton: View {
         })
         .sheet(isPresented: $showSheet) {
             SelectionSheetView()
-                .presentationDetents([.height(sheetHeight / 2)])
+                .presentationDetents([.height(sheetHeight / 1.7)])
                 .presentationDragIndicator(.hidden)
                 
         }

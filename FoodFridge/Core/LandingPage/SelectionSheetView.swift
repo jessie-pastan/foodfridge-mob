@@ -13,16 +13,19 @@ struct SelectionSheetView: View {
     @Environment(\.dismiss) var dismiss
     private var listOfItems = ["bread", "Jasmine rice", "rice noodles", "egg noodles"]
     var body: some View {
-        //HStack {
-        //Spacer()
+        HStack {
+        Spacer()
             Button(action: {
                 dismiss()
             }, label: {
-                Image(systemName: "x.circle.fill")
+                Image(systemName: "x.circle.fill").resizable()
+                
             })
+            .frame(width: 20, height: 20)
+            .padding(.top)
+            .padding(.horizontal)
             .foregroundColor(Color(.button2))
-       // }
-        //.padding(.horizontal)
+        }
         
         
         NavigationStack {
