@@ -34,7 +34,9 @@ struct AuthenthicationView: View {
                             LandingPageView()
                         } label: {
                             Text("Skip")
+                                
                         }
+                        .padding(.trailing, -10)
                         .offset(y: -130)
                         .foregroundStyle(Color(.button4))
                     }
@@ -43,11 +45,13 @@ struct AuthenthicationView: View {
                             .fixedSize(horizontal: false, vertical: true)
                             .lineLimit(2)
                             .multilineTextAlignment(.center)
+                            .padding(.leading, 35)
                         
                     }
                     .font(Font.custom("CourierPrime-Bold", size: 26))
                     .padding(.top, 10)
                     .frame(width: proxy.size.width)
+                    .padding(.leading, -30)
                     
                     //MARK: Buttons for create account and sign in
                     //create account with email
