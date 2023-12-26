@@ -15,7 +15,7 @@ struct LandingPageView: View {
     @State var showSheet = false
     
     let cuisine = ["Thai", "French", "Italian","Japnese", "Chinese"]
-    let itemCategories = ["Carb", "Dairy", "Seasoning","Protein", "Veggies","Cuisine"]
+    let itemCategories = ["Carbs", "Dairy", "Seasoning","Protein", "Veggies","Cuisine"]
     let fourRows = [GridItem(),GridItem(),GridItem()]
     
     var body: some View {
@@ -67,7 +67,7 @@ struct LandingPageView: View {
                             VStack {
                                 SelectIngredientsButton(title: "\(itemCategories[item])", action: {
                                     showSheet = true
-                                }, sheetHeight: proxy.size.height, height: proxy.size.height / 15 , showSheet: $showSheet)
+                                }, sheetHeight: proxy.size.height,width: proxy.size.width / 2.5, height: proxy.size.height / 15 , showSheet: $showSheet)
                             }
                             
                             

@@ -14,6 +14,7 @@ struct SelectIngredientsButton: View {
     var sheetHeight: CGFloat = 0
     var width: CGFloat = 180
     var height: CGFloat = 40
+    var icon: String = "dairy"
     
     @Binding var showSheet: Bool
     
@@ -22,13 +23,20 @@ struct SelectIngredientsButton: View {
         Button(action:
             action
         , label: {
-            Text(title)
-                .lineLimit(1)
-                .frame(width: width , height: height)
-                .foregroundColor(Color.button4)
-                .background(Color.button1)
-                .cornerRadius(120)
-                .font(.custom(CustomFont.appFontRegular.rawValue, fixedSize: 20))
+            HStack {
+                Image(icon)
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .padding(.horizontal)
+                Text(title)
+                    .lineLimit(1)
+                    .frame(width: width , height: height)
+                    .foregroundColor(Color.button4)
+                    .font(.custom(CustomFont.appFontRegular.rawValue, fixedSize: 20))
+                    .padding(.leading, -45)
+            }
+            .background(Color.button1)
+            .cornerRadius(120)
         })
         .sheet(isPresented: $showSheet) {
             SelectionSheetView()
