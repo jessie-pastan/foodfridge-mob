@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct selectionSheetView: View {
+struct SelectionSheetView: View {
     var body: some View {
         
         Text("")
@@ -16,5 +16,5 @@ struct selectionSheetView: View {
 }
 
 #Preview {
-    selectionSheetView()
+    SelectionSheetView()
 }
