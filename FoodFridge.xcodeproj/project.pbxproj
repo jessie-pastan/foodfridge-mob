@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */; };
 		754350002B3A332500823A50 /* SmallButton .swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFF2B3A332500823A50 /* SmallButton .swift */; };
+		754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350012B3A593300823A50 /* SelectIngredientsButton.swift */; };
+		754350042B3A653200823A50 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350032B3A653200823A50 /* CustomFont.swift */; };
 		757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542C22B33E8F000048178 /* FoodFridgeApp.swift */; };
 		757542C52B33E8F000048178 /* AuthenthicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542C42B33E8F000048178 /* AuthenthicationView.swift */; };
 		757542C72B33E8F100048178 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757542C62B33E8F100048178 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionSheetView.swift; sourceTree = "<group>"; };
 		75434FFF2B3A332500823A50 /* SmallButton .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SmallButton .swift"; sourceTree = "<group>"; };
+		754350012B3A593300823A50 /* SelectIngredientsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsButton.swift; sourceTree = "<group>"; };
+		754350032B3A653200823A50 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
 		757542BF2B33E8F000048178 /* FoodFridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		757542C22B33E8F000048178 /* FoodFridgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodFridgeApp.swift; sourceTree = "<group>"; };
 		757542C42B33E8F000048178 /* AuthenthicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenthicationView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			children = (
 				757542D22B33EB0E00048178 /* ColorExtention.swift */,
 				757542E52B351BD800048178 /* Fonts */,
+				754350032B3A653200823A50 /* CustomFont.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			children = (
 				757542D62B33F31B00048178 /* LoginButton.swift */,
 				75434FFF2B3A332500823A50 /* SmallButton .swift */,
+				754350012B3A593300823A50 /* SelectIngredientsButton.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -224,8 +230,10 @@
 				757542D72B33F31B00048178 /* LoginButton.swift in Sources */,
 				757542C52B33E8F000048178 /* AuthenthicationView.swift in Sources */,
 				75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */,
+				754350042B3A653200823A50 /* CustomFont.swift in Sources */,
 				757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */,
 				754350002B3A332500823A50 /* SmallButton .swift in Sources */,
+				754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */,
 				757542DB2B3401EE00048178 /* SignUpWithEmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
