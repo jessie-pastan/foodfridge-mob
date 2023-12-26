@@ -16,82 +16,82 @@ struct AuthenthicationView: View {
     
     var body: some View {
         NavigationStack {
-            
-            VStack {
-                HStack {
-                   
-                    Spacer()
-                    //MARK: Image
-                    Image("cooking")
-                        .resizable()
-                        .frame(width: 270, height: 270)
-                        .scaledToFit()
-                        .offset(x: 20, y: 20)
-                    Spacer()
-                    
-                    //MARK: Skip link to landing page
-                    NavigationLink {
-                        LandingPageView()
-                    } label: {
-                        Text("Skip")
-                    }
-                    .offset(y: -130)
-                    .foregroundStyle(Color(.button4))
-                }
+            GeometryReader { proxy in
                 VStack {
-                    Text("Ready to explore new menu ?")
-                        .fixedSize(horizontal: false, vertical: true)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.center)
-                    
-                }
-                .font(Font.custom("CourierPrime-Regular", size: 26))
-                .padding(.top, 10)
-                .frame(width: 250)
-                
-                //MARK: Buttons for create account and sign in
-                //create account with email
-                VStack {
-                    LoginButton(title:"Create account") {
-                        self.signUpWithEmailShow = true
+                    HStack {
+                        
+                        Spacer()
+                        //MARK: Image
+                        Image("cooking")
+                            .resizable()
+                            .frame(width: 270, height: 270)
+                            .scaledToFit()
+                            .offset(x: 20, y: 20)
+                        Spacer()
+                        
+                        //MARK: Skip link to landing page
+                        NavigationLink {
+                            LandingPageView()
+                        } label: {
+                            Text("Skip")
+                        }
+                        .offset(y: -130)
+                        .foregroundStyle(Color(.button4))
                     }
-                    .sheet(isPresented: $signUpWithEmailShow, content: {
-                        SignUpWithEmailView()
-                    })
-                    
-                    LoginButton(title:"Sign in with Email") {
-                        self.logInPageShow = true
+                    VStack {
+                        Text("Ready to explore new menu ?")
+                            .fixedSize(horizontal: false, vertical: true)
+                            .lineLimit(2)
+                            .multilineTextAlignment(.center)
+                        
                     }
-                    .sheet(isPresented: $logInPageShow, content: {
-                        LogInView()
-                    })
-                }
-                .padding(.leading,-30)
-                .font(Font.custom("CourierPrime-Bold", size: 25))
-                
-                Text("or")
-                    .padding([.top,.bottom], 30)
-                    .font(Font.custom("CourierPrime-Regular", size: 17))
-                
-                
-                HStack {
-                    Image("googleIcon")
-                        .resizable()
-                        .frame(width: 55, height: 55)
-                    Image("appleIcon")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                        .offset(y: -5)
+                    .font(Font.custom("CourierPrime-Bold", size: 26))
+                    .padding(.top, 10)
+                    .frame(width: proxy.size.width)
+                    
+                    //MARK: Buttons for create account and sign in
+                    //create account with email
+                    VStack {
+                        LoginButton(title:"Create account") {
+                            self.signUpWithEmailShow = true
+                        }
+                        .sheet(isPresented: $signUpWithEmailShow, content: {
+                            SignUpWithEmailView()
+                        })
+                        
+                        LoginButton(title:"Sign in with Email") {
+                            self.logInPageShow = true
+                        }
+                        .sheet(isPresented: $logInPageShow, content: {
+                            LogInView()
+                        })
+                    }
+                    .padding(.leading,-30)
+                    .font(Font.custom("CourierPrime-Regular", size: 25))
+                    
+                    Text("or")
+                        .padding([.top,.bottom], 10)
+                        .font(Font.custom("CourierPrime-Regular", size: 17))
+                    
+                    
+                    HStack {
+                        Image("googleIcon")
+                            .resizable()
+                            .frame(width: 55, height: 55)
+                        Image("appleIcon")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .offset(y: -5)
+                        
+                    }
+                    
+                    Spacer()
                     
                 }
-                
-                Spacer()
-                
+                .padding()
             }
-            .padding()
         }
     }
-    
 }
 
 
