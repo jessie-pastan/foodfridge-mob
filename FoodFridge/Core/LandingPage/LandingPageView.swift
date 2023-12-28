@@ -9,10 +9,12 @@ import SwiftUI
 
 struct LandingPageView: View {
     
-   
-    @State var showSheet = false
+  
+    @State private var showSheet = false
+    @State var selectedTags = Set<String>()
+    @State var selectedItems = [String]()
+    @EnvironmentObject var vm: TagsViewModel
     
-   
     let itemCategories = ["Carbs", "Dairy", "Seasoning","Protein", "Veggies","Cuisine"]
     let threeRows = [GridItem(),GridItem(),GridItem()]
     
@@ -33,7 +35,7 @@ struct LandingPageView: View {
                     ZStack {
                         let prompt = Rectangle()
                         prompt.frame( height: proxy.size.height / 3.5).cornerRadius(10)
-                        //MARK: Display Selected ingredients
+                        //MARK: Display Selected ingredients in prompt
                         
                            
                         
@@ -49,6 +51,12 @@ struct LandingPageView: View {
                         .frame(width: 200, height: 30)
                         .offset(y: 70)
                         .padding()
+                        
+                        VStack {
+                            TagsViewPrompt(items: vm.selectedTags)
+                        }
+                        .frame(height: proxy.size.height / 3.7)
+                        
                     }
                     .padding(.top, -10)
                     
@@ -88,6 +96,6 @@ struct LandingPageView: View {
     }
 }
 
-#Preview {
-    LandingPageView()
-}
+//#Preview {
+    //LandingPageView(items: <#Binding<Set<String>>#>)
+//}

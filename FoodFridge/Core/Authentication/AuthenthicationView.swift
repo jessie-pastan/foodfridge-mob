@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AuthenthicationView: View {
+   
     @State private var signUpWithEmailShow: Bool = false
     @State private var signUpWithGoogleShow: Bool = false
     @State private var signUpWithAppleShow: Bool = false

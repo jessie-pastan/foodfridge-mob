@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignUpWithEmailView: View {
+    
     var body: some View {
         Text("Sign up with Email")
     }

@@ -1,23 +1,25 @@
 //
-//  TagsView.swift
+//  TagViewPrompt.swift
 //  FoodFridge
 //
-//  Created by Jessie Pastan on 12/27/23.
+//  Created by Jessie Pastan on 12/28/23.
 //
 
 import SwiftUI
-struct TagsView: View {
-    
-    let items : [String]
+
+struct TagsViewPrompt: View {
+   
     var groupItems: [[String]] = [[String]]()
     let screenWidth = UIScreen.main.bounds.width
     @State private var selectedItems = Set<String>()
+    var items: [String]
+    @ObservedObject var vm = TagsViewModel()
     
     init(items: [String]) {
         self.items = items
+        _vm = ObservedObject(initialValue: TagsViewModel())
+        //groupItems = createGroupedItems(items: _vm.wrappedValue.selectedTags )
         groupItems = createGroupedItems(items: items)
-        
-        
         func createGroupedItems(items: [String]) -> [[String]] {
             var groupedItems: [[String]] = [[String]]()
             var tempItems: [String] = [String]()
@@ -43,45 +45,34 @@ struct TagsView: View {
             groupedItems.append(tempItems)
             
             return groupedItems
-            
-            
+
         }
-        
     }
     
     var body: some View {
+        
         ScrollView {
             LazyVStack {
                 ForEach(groupItems, id:  \.self) { subItems in
                     HStack {
-                        ForEach(subItems, id: \.self) { tag in
-                            Text(tag)
+                        ForEach(subItems, id: \.self) { item in
+                                Text("\(item) x")
                                 .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 12))
+                                .foregroundStyle(.black)
                                 .lineLimit(1)
                                 .padding()
                                 .padding(.vertical, -10)
-                                .background(selectedItems.contains(tag) ? (Color(.button4)) : (Color(.button3)) )
-                                .clipShape(RoundedRectangle(cornerRadius: 20.0))
-                                .onTapGesture {
-                                    if selectedItems.contains(tag) {
-                                        selectedItems.remove(tag)
-                                    }else {
-                                        selectedItems.insert(tag)
-                                    }
-                                        
-                                }
+                                .background((Color(.button4))
+                                .clipShape(RoundedRectangle(cornerRadius: 20.0)))
+                            
                         }
                     }
-                    
                 }
             }
         }
     }
-    
-    
 }
 
-
 #Preview {
-    TagsView(items: ["bread", "jasmine rice", "rice noodles", "egg noodles", "wholewheat bread", "spagetthi", "glass noodles", "potato", "corn", "pasta","quinou", "oatmeal", "pita", "tortilla", "corn bread", "taro", "sweet potato"])
+        TagsViewPrompt(items: ["testing"])
 }

@@ -14,6 +14,7 @@ struct FoodFridgeApp: App {
         
         WindowGroup {
             AuthenthicationView()
+                .environmentObject(TagsViewModel())
         }
     }
 }
