@@ -11,7 +11,7 @@ struct SelectionSheetView: View {
     
     @State var searchTag = ""
     @Environment(\.dismiss) var dismiss
-    private var listOfItems = ["bread", "Jasmine rice", "rice noodles", "egg noodles"]
+    private var listOfItems = ["bread", "jasmine rice", "rice noodles", "egg noodles", "wholewheat bread", "spagetthi", "glass noodles", "potato", "pasta","quinou", "oatmeal", "corn", "pita", "tortilla", "corn bread", "taro", "sweet potato"]
     var body: some View {
         HStack {
         Spacer()
@@ -29,6 +29,8 @@ struct SelectionSheetView: View {
         
         
         NavigationStack {
+            
+            /*
             ScrollView {
                 VStack {
                     
@@ -75,13 +77,16 @@ struct SelectionSheetView: View {
         
                 }
             }
-           }  
+             */
+           }
            .searchable(text: $searchTag, placement:
                 .navigationBarDrawer(displayMode: .always))
         
-       
+      
+      
     }
 }
+
 
 #Preview {
     SelectionSheetView()

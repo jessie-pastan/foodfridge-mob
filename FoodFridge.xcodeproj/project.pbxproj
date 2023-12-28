@@ -22,6 +22,7 @@
 		757542DF2B34F3D300048178 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542DE2B34F3D300048178 /* LogInView.swift */; };
 		757542E22B351BC200048178 /* CourierPrime-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757542E12B351BC200048178 /* CourierPrime-Regular.ttf */; };
 		757542E42B351BD000048178 /* CourierPrime-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757542E32B351BD000048178 /* CourierPrime-Bold.ttf */; };
+		75EBAAB62B3D2BF80039841F /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EBAAB52B3D2BF80039841F /* TagsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		757542E02B351AAF00048178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		757542E12B351BC200048178 /* CourierPrime-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CourierPrime-Regular.ttf"; sourceTree = "<group>"; };
 		757542E32B351BD000048178 /* CourierPrime-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CourierPrime-Bold.ttf"; sourceTree = "<group>"; };
+		75EBAAB52B3D2BF80039841F /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				757542DC2B34B08D00048178 /* LandingPageView.swift */,
-				75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */,
 			);
 			path = LandingPage;
 			sourceTree = "<group>";
@@ -128,6 +129,7 @@
 			children = (
 				75434FFB2B37E6C500823A50 /* Authentication */,
 				75434FFC2B37E6E600823A50 /* LandingPage */,
+				75EBAAB42B3D280A0039841F /* SelectionIngredientView */,
 				757542D52B33F2E700048178 /* Component */,
 			);
 			path = Core;
@@ -150,6 +152,15 @@
 				757542E12B351BC200048178 /* CourierPrime-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		75EBAAB42B3D280A0039841F /* SelectionIngredientView */ = {
+			isa = PBXGroup;
+			children = (
+				75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */,
+				75EBAAB52B3D2BF80039841F /* TagsView.swift */,
+			);
+			path = SelectionIngredientView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +246,7 @@
 				754350002B3A332500823A50 /* SmallButton .swift in Sources */,
 				754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */,
 				757542DB2B3401EE00048178 /* SignUpWithEmailView.swift in Sources */,
+				75EBAAB62B3D2BF80039841F /* TagsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
