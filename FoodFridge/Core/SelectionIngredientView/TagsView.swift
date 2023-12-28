@@ -11,10 +11,12 @@ struct TagsView: View {
     let items : [String]
     var groupItems: [[String]] = [[String]]()
     let screenWidth = UIScreen.main.bounds.width
+    @State private var selectedItems = Set<String>()
     
     init(items: [String]) {
         self.items = items
         groupItems = createGroupedItems(items: items)
+        
         
         func createGroupedItems(items: [String]) -> [[String]] {
             var groupedItems: [[String]] = [[String]]()
@@ -52,12 +54,22 @@ struct TagsView: View {
             LazyVStack {
                 ForEach(groupItems, id:  \.self) { subItems in
                     HStack {
-                        ForEach(subItems, id: \.self) { word in
-                            Text(word)
+                        ForEach(subItems, id: \.self) { tag in
+                            Text(tag)
+                                .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 12))
+                                .lineLimit(1)
                                 .padding()
                                 .padding(.vertical, -10)
-                                .background((Color(.button3)))
+                                .background(selectedItems.contains(tag) ? (Color(.button4)) : (Color(.button3)) )
                                 .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                                .onTapGesture {
+                                    if selectedItems.contains(tag) {
+                                        selectedItems.remove(tag)
+                                    }else {
+                                        selectedItems.insert(tag)
+                                    }
+                                        
+                                }
                         }
                     }
                     
