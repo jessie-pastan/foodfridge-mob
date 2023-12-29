@@ -29,8 +29,8 @@ struct TagsViewPrompt: View {
                 label.text = word
                 label.sizeToFit()
                 
-                let labelWidth = label.frame.size.width + 32
-                if (width + labelWidth + 32) < screenWidth {
+                let labelWidth = label.frame.size.width + 40
+                if (width + labelWidth + 40) < screenWidth {
                     width += labelWidth
                     tempItems.append(word)
                     

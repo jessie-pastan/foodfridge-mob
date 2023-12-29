@@ -13,6 +13,8 @@ struct LandingPageView: View {
     @State private var showSheet = false
     @State var selectedTags = Set<String>()
     @State var selectedItems = [String]()
+    @State private var referenceHeight: CGFloat = 0
+
     @EnvironmentObject var vm: TagsViewModel
     
     let itemCategories = ["Carbs", "Dairy", "Seasoning","Protein", "Veggies","Cuisine"]
@@ -35,27 +37,35 @@ struct LandingPageView: View {
                     ZStack {
                         let prompt = Rectangle()
                         prompt.frame( height: proxy.size.height / 3.5).cornerRadius(10)
-                        //MARK: Display Selected ingredients in prompt
+                            .onAppear {
+                                referenceHeight = proxy.size.height / 3.5
+                            }
+                            //MARK: Display Selected ingredients in prompt
+                            .overlay (
+                                TagsViewPrompt(items: vm.selectedTags)
+                                    .padding(.top, 3)
+                                    .frame(height: referenceHeight * 0.7)
+                                , alignment: .topLeading
+                                    
+                            )
+                            //MARK: Genenerate Recipes Button
+                            .overlay(
+                                Button {
+                                    //TODO: call chat GPT api to get recipes and navigate user to recipes screen
+                                    
+                                } label: {
+                                    SmallButton(title: "Generate Recipe")
+                                }
+                                .frame(width: 200, height: 30)
+                                .offset(y: 80)
+                            )
+                        
+                        
                         
                            
+                      
                         
-                        //MARK: Genenerate Recipes Button
-                        VStack {
-                            Button {
-                                //TODO: call chat GPT api to get recipes and navigate user to recipes screen
-                                
-                            } label: {
-                                SmallButton(title: "Generate Recipe")
-                            }
-                        }
-                        .frame(width: 200, height: 30)
-                        .offset(y: 70)
-                        .padding()
-                        
-                        VStack {
-                            TagsViewPrompt(items: vm.selectedTags)
-                        }
-                        .frame(height: proxy.size.height / 3.7)
+                       
                         
                     }
                     .padding(.top, -10)
