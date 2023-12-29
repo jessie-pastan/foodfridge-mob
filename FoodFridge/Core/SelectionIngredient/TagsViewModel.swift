@@ -15,4 +15,9 @@ class TagsViewModel: ObservableObject {
         self.selectedTags.append(tag)
     }
     
+    func deleteSelectedTag(tag: String)  {
+        self.selectedTags.removeAll { $0 == tag }
+        
+    }
+    
 }

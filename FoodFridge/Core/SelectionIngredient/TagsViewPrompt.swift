@@ -14,6 +14,7 @@ struct TagsViewPrompt: View {
     @State private var selectedItems = Set<String>()
     var items: [String]
     @ObservedObject var vm = TagsViewModel()
+    @EnvironmentObject var vm2: TagsViewModel
     
     init(items: [String]) {
         self.items = items
@@ -52,19 +53,28 @@ struct TagsViewPrompt: View {
     var body: some View {
         
         ScrollView {
-            LazyVStack {
-                ForEach(groupItems, id:  \.self) { subItems in
-                    HStack {
-                        ForEach(subItems, id: \.self) { item in
+            ScrollViewReader { scrollView in
+                LazyVStack {
+                    ForEach(groupItems, id:  \.self) { subItems in
+                        HStack {
+                            ForEach(subItems, id: \.self) { item in
                                 Text("\(item) x")
-                                .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 12))
-                                .foregroundStyle(.black)
-                                .lineLimit(1)
-                                .padding()
-                                .padding(.vertical, -10)
-                                .background((Color(.button4))
-                                .clipShape(RoundedRectangle(cornerRadius: 20.0)))
-                            
+                                    .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 12))
+                                    .foregroundStyle(.black)
+                                    .lineLimit(1)
+                                    .padding()
+                                    .padding(.vertical, -10)
+                                    .background((Color(.button4))
+                                        .clipShape(RoundedRectangle(cornerRadius: 20.0)))
+                                    .onTapGesture {
+                                        vm2.deleteSelectedTag(tag: item)
+                                        print("deleted : \(item)")
+                                        print("update deleted list = \(vm2.selectedTags)")
+                                    }
+                                    .onAppear {
+                                        scrollView.scrollTo(item.last, anchor: .bottom)
+                                    }
+                            }
                         }
                     }
                 }

@@ -67,7 +67,7 @@ struct TagsView: View {
                                     //update tag to prompt
                                     vm.addSelectedTag(tag: tag)
                                     print("selected tag = \(tag)")
-                                    print("\(vm.selectedTags)")
+                                    print("update added list:\(vm.selectedTags)")
                                     
                                     //update tag background color in sheet
                                     if selectedItems.contains(tag) {

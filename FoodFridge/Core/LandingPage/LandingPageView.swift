@@ -57,7 +57,7 @@ struct LandingPageView: View {
                                     SmallButton(title: "Generate Recipe")
                                 }
                                 .frame(width: 200, height: 30)
-                                .offset(y: 80)
+                                .offset(y: 85)
                             )
                         
                         
