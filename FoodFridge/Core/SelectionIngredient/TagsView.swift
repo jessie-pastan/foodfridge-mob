@@ -52,6 +52,17 @@ struct TagsView: View {
     
     var body: some View {
         ScrollView {
+            VStack {
+                Text("Carbohydrate")
+                    .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 15))
+                    .padding()
+                    .padding(.vertical, -10)
+                    .background(Color(.button1))
+                    .clipShape(RoundedRectangle(cornerRadius: 20.0))
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal)
+            
             LazyVStack {
                 ForEach(groupItems, id:  \.self) { subItems in
                     HStack {
@@ -72,6 +83,8 @@ struct TagsView: View {
                                     //update tag background color in sheet
                                     if selectedItems.contains(tag) {
                                         selectedItems.remove(tag)
+                                        //update prompt list
+                                        vm.deleteSelectedTag(tag: tag)
                                     }else {
                                         selectedItems.insert(tag)
                                     }
