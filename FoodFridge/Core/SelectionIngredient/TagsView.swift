@@ -55,6 +55,7 @@ struct TagsView: View {
             VStack {
                 Text("Carbohydrate")
                     .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 15))
+                    .foregroundStyle(.button4)
                     .padding()
                     .padding(.vertical, -10)
                     .background(Color(.button1))
