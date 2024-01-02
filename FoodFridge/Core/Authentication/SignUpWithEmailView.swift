@@ -8,43 +8,47 @@
 import SwiftUI
 
 struct SignUpWithEmailView: View {
-    @State var name: String = ""
-    
+    @State var username: String = ""
+    @State var password: String = ""
     var body: some View {
-        Text("Create account")
-              .font(.custom("CourierPrime-Bold", size: 40))
-              .padding(.top, -105)
-        
-        VStack{
-            TextField("username", text: $name)
+        VStack (alignment: .center) {
+            Text("Create account")
+                  .font(.custom("CourierPrime-Bold", size: 40))
+                  .padding(.top, 100)
+            TextField("username", text: $username)
                 .background(Color.button4)
                 .foregroundColor(Color.black)
-                .font(.custom("CourierPrime-Regular", size: 30))
-                .cornerRadius(70)
+                .font(.custom("CourierPrime-Regular", size: 25))
+                .cornerRadius(150)
+                .frame(maxWidth: .infinity)
                 .padding()
-            TextField("password", text: $name)
+            TextField("password", text: $password)
                 .background(Color.button4)
                 .foregroundColor(Color.black)
-                .font(.custom("CourierPrime-Regular", size: 30))
-                .cornerRadius(70)
+                .font(.custom("CourierPrime-Regular", size: 25))
+                .cornerRadius(150)
+                .frame(maxWidth: .infinity)
                 .padding()
+           Spacer()
             Button(action: {}) {
-                Spacer()
                 Text("Sign Up")
-                    .font(.title3)
-                    .frame(maxWidth: 300)
+                    .lineLimit(1)
+                    .frame(width: 300 , height: 45)
+                    .foregroundColor(Color.button1)
+                    .font(Font.custom("CourierPrime-bold", size: 20))
+                    .padding(7)
                     .background(Color.button2)
-                    .foregroundColor(Color.black)
-                    .padding(.bottom)
-                    .cornerRadius(140)
-                Spacer()
+                    .cornerRadius(120)
+                    .offset(y: -250)
             }
         }
-        HStack{
-            Spacer()
+        VStack{
             Text("By using the app, you agree to our Terms of use and Privacy policy")
+                .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                .font(.custom("CourierPrime-Regular", size: 12))
                 .padding(.bottom)
-        }
+                .offset(y: -220)
+       }
     }
 }
   #Preview
