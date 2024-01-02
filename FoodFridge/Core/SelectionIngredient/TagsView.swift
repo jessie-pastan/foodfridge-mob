@@ -12,9 +12,12 @@ struct TagsView: View {
     var groupItems: [[String]] = [[String]]()
     let screenWidth = UIScreen.main.bounds.width
     @State private var selectedItems = Set<String>()
+    @EnvironmentObject var vm: TagsViewModel
     
     init(items: [String]) {
+        
         self.items = items
+        
         groupItems = createGroupedItems(items: items)
         
         
@@ -43,14 +46,24 @@ struct TagsView: View {
             groupedItems.append(tempItems)
             
             return groupedItems
-            
-            
+
         }
-        
     }
     
     var body: some View {
         ScrollView {
+            VStack {
+                Text("Carbohydrate")
+                    .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 15))
+                    .foregroundStyle(.button4)
+                    .padding()
+                    .padding(.vertical, -10)
+                    .background(Color(.button1))
+                    .clipShape(RoundedRectangle(cornerRadius: 20.0))
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal)
+            
             LazyVStack {
                 ForEach(groupItems, id:  \.self) { subItems in
                     HStack {
@@ -59,26 +72,30 @@ struct TagsView: View {
                                 .font(Font.custom(CustomFont.appFontRegular.rawValue, size: 12))
                                 .lineLimit(1)
                                 .padding()
-                                .padding(.vertical, -10)
+                                  .padding(.vertical, -10)
                                 .background(selectedItems.contains(tag) ? (Color(.button4)) : (Color(.button3)) )
                                 .clipShape(RoundedRectangle(cornerRadius: 20.0))
                                 .onTapGesture {
+                                    //update tag to prompt
+                                    vm.addSelectedTag(tag: tag)
+                                    print("selected tag = \(tag)")
+                                    print("update added list:\(vm.selectedTags)")
+                                    
+                                    //update tag background color in sheet
                                     if selectedItems.contains(tag) {
                                         selectedItems.remove(tag)
+                                        //update prompt list
+                                        vm.deleteSelectedTag(tag: tag)
                                     }else {
                                         selectedItems.insert(tag)
                                     }
-                                        
                                 }
                         }
                     }
-                    
                 }
             }
         }
     }
-    
-    
 }
 
 

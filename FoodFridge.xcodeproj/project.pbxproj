@@ -11,6 +11,8 @@
 		754350002B3A332500823A50 /* SmallButton .swift in Sources */ = {isa = PBXBuildFile; fileRef = 75434FFF2B3A332500823A50 /* SmallButton .swift */; };
 		754350022B3A593300823A50 /* SelectIngredientsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350012B3A593300823A50 /* SelectIngredientsButton.swift */; };
 		754350042B3A653200823A50 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754350032B3A653200823A50 /* CustomFont.swift */; };
+		754DE9D42B3E1067002B5E01 /* TagsViewPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DE9D32B3E1067002B5E01 /* TagsViewPrompt.swift */; };
+		754DE9D62B3E20FE002B5E01 /* TagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754DE9D52B3E20FE002B5E01 /* TagsViewModel.swift */; };
 		757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542C22B33E8F000048178 /* FoodFridgeApp.swift */; };
 		757542C52B33E8F000048178 /* AuthenthicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757542C42B33E8F000048178 /* AuthenthicationView.swift */; };
 		757542C72B33E8F100048178 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757542C62B33E8F100048178 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		75434FFF2B3A332500823A50 /* SmallButton .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SmallButton .swift"; sourceTree = "<group>"; };
 		754350012B3A593300823A50 /* SelectIngredientsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientsButton.swift; sourceTree = "<group>"; };
 		754350032B3A653200823A50 /* CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		754DE9D32B3E1067002B5E01 /* TagsViewPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewPrompt.swift; sourceTree = "<group>"; };
+		754DE9D52B3E20FE002B5E01 /* TagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewModel.swift; sourceTree = "<group>"; };
 		757542BF2B33E8F000048178 /* FoodFridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		757542C22B33E8F000048178 /* FoodFridgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodFridgeApp.swift; sourceTree = "<group>"; };
 		757542C42B33E8F000048178 /* AuthenthicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenthicationView.swift; sourceTree = "<group>"; };
@@ -129,7 +133,7 @@
 			children = (
 				75434FFB2B37E6C500823A50 /* Authentication */,
 				75434FFC2B37E6E600823A50 /* LandingPage */,
-				75EBAAB42B3D280A0039841F /* SelectionIngredientView */,
+				75EBAAB42B3D280A0039841F /* SelectionIngredient */,
 				757542D52B33F2E700048178 /* Component */,
 			);
 			path = Core;
@@ -154,13 +158,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		75EBAAB42B3D280A0039841F /* SelectionIngredientView */ = {
+		75EBAAB42B3D280A0039841F /* SelectionIngredient */ = {
 			isa = PBXGroup;
 			children = (
+				754DE9D52B3E20FE002B5E01 /* TagsViewModel.swift */,
 				75434FFD2B3A2D3300823A50 /* SelectionSheetView.swift */,
 				75EBAAB52B3D2BF80039841F /* TagsView.swift */,
+				754DE9D32B3E1067002B5E01 /* TagsViewPrompt.swift */,
 			);
-			path = SelectionIngredientView;
+			path = SelectionIngredient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,8 +244,10 @@
 				757542D32B33EB0E00048178 /* ColorExtention.swift in Sources */,
 				757542DF2B34F3D300048178 /* LogInView.swift in Sources */,
 				757542DD2B34B08D00048178 /* LandingPageView.swift in Sources */,
+				754DE9D62B3E20FE002B5E01 /* TagsViewModel.swift in Sources */,
 				757542D72B33F31B00048178 /* LoginButton.swift in Sources */,
 				757542C52B33E8F000048178 /* AuthenthicationView.swift in Sources */,
+				754DE9D42B3E1067002B5E01 /* TagsViewPrompt.swift in Sources */,
 				75434FFE2B3A2D3300823A50 /* SelectionSheetView.swift in Sources */,
 				754350042B3A653200823A50 /* CustomFont.swift in Sources */,
 				757542C32B33E8F000048178 /* FoodFridgeApp.swift in Sources */,
