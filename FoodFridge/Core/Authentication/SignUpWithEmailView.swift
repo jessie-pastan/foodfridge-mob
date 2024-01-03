@@ -16,6 +16,7 @@ struct SignUpWithEmailView: View {
                   .font(.custom("CourierPrime-Bold", size: 40))
                   .padding(.top, 100)
             TextField("username", text: $username)
+                .frame(height: 40)
                 .background(Color.button4)
                 .foregroundColor(Color.black)
                 .font(.custom("CourierPrime-Regular", size: 25))
