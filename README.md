@@ -3,6 +3,7 @@ FoodFridge App Features
 -Archive your favorite recipes  
 -Camera scan item and save in your pantry  
 -Manage your pantry item for cooking  
+
 Technology  
 -SwiftUI  
 -RESTFul api  
